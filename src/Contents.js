@@ -29,9 +29,9 @@ const TextBlock = styled.div`
 const P = styled.p`
   margin: 15px 0px;
   font-size: 14px;
-  font-family: "맑은 고딕";
+  font-family: "Nanum Gothic", sans-serif;
 `;
-const Contents2 = () => {
+const Contents = () => {
   return (
     <Container>
       <TextBlock>
@@ -46,4 +46,4 @@ const Contents2 = () => {
     </Container>
   );
 };
-export default Contents2;
+export default Contents;
