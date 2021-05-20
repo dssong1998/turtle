@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-const { innerWidth: WIDTH } = window;
 const Container = styled.div`
   width: 100vw;
   display: flex;
-  flex-direction: ${WIDTH > 985 ? "row" : "column"};
   justify-content: center;
   align-items: center;
-  background-color: #14a76c;
+  background-color: #85a977;
   white-space: normal;
   padding: 40px 20px;
   padding-bottom: 20px;
@@ -30,6 +28,7 @@ const P = styled.p`
   margin: 15px 0px;
   font-size: 14px;
   font-family: "Nanum Gothic", sans-serif;
+  font-weight: 600;
 `;
 const Contents = () => {
   return (
