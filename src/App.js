@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import Intro from "./Screen/Intro";
 import GlobalStyles from "./GlobalStyles";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -9,11 +10,16 @@ import ResultDW from "./Screen/Result_DW";
 import ReadDW from "./Screen/Read_DW";
 import ShortBook from "./Screen/ShortBook";
 import Schedule from "./Screen/Schedule";
+=======
+import Contents from "./Contents";
+import GlobalStyles from "./GlobalStyles";
+>>>>>>> 4812ac2981b984a587cb6868cc275a504e7f1eef
 
 function App() {
   return (
     <>
       <GlobalStyles />
+<<<<<<< HEAD
       <Router>
         <Switch>
           <Route path={route.home} exact>
@@ -39,6 +45,9 @@ function App() {
           </Route>
         </Switch>
       </Router>
+=======
+      <Contents />
+>>>>>>> 4812ac2981b984a587cb6868cc275a504e7f1eef
     </>
   );
 }
