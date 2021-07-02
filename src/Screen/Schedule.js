@@ -69,6 +69,7 @@ const Schedule = () => {
   const onValid = async (data) => {
     if (data.email) {
       if (!emailLoad) {
+        console.lg(data.email);
         emailVal({
           variables: {
             id: location.state.userId,
@@ -79,7 +80,6 @@ const Schedule = () => {
     }
     if (data.phone1 && data.phone2 && data.phone3) {
       const phone = [data.phone1, data.phone2, data.phone3].join("");
-      console.log(phone);
       if (!phoneLoad) {
         PhoneVal({
           variables: {

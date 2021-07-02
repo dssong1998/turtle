@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 const EMAIL_SEND = gql`
-  mutation sendEmail($id: Int!) {
+  mutation sendEmail($id: Int!, $email: String!) {
     sendEmail(id: $id, email: $email)
   }
 `;
