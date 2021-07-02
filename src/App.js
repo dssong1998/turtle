@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import route from "./route";
 import Notfound from "./Screen/Notfound";
 import Question1 from "./Screen/Question_P1";
-import ReadDW from "./Screen/Read_DW";
 import ShortBook from "./Screen/ShortBook";
 import Schedule from "./Screen/Schedule";
 import ResultDW from "./Screen/Results/Result_DW";
@@ -40,9 +39,6 @@ function App() {
           </Route>
           <Route path={route.result_sf} exact>
             <ResultPH />
-          </Route>
-          <Route path={route.read} exact>
-            <ReadDW />
           </Route>
           <Route path={route.shortBook} exact>
             <ShortBook />
