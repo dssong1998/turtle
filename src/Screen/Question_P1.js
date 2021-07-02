@@ -1,8 +1,4 @@
-import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
-import { LinkBtn } from "../Components/Button";
-import { Container } from "../Components/Layout";
 import Logo from "../Components/Logo";
 import { TextBox, Title, ColorTitle, Pre } from "../Components/Text";
 import route from "../route";

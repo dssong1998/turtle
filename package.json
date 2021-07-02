@@ -11,7 +11,10 @@
     "nodemailer": "^6.6.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+<<<<<<< HEAD
     "react-hook-form": "^7.9.0",
+=======
+>>>>>>> working
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.2.1",
