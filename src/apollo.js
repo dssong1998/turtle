@@ -1,7 +1,7 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 
 const httpLink = createHttpLink({
-  uri: "http://192.168.35.213:4000/graphql",
+  uri: "https://turtle-backend.herokuapp.com/graphql",
 });
 
 export const client = new ApolloClient({
