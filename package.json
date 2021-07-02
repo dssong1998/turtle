@@ -8,13 +8,11 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "dotenv": "^8.2.0",
+    "graphql": "^15.5.1",
     "nodemailer": "^6.6.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-<<<<<<< HEAD
     "react-hook-form": "^7.9.0",
-=======
->>>>>>> working
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.2.1",
