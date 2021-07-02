@@ -5,14 +5,21 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import route from "./route";
 import Notfound from "./Screen/Notfound";
 import Question1 from "./Screen/Question_P1";
-import ResultDW from "./Screen/Result_DW";
 import ReadDW from "./Screen/Read_DW";
 import ShortBook from "./Screen/ShortBook";
 import Schedule from "./Screen/Schedule";
+import ResultDW from "./Screen/Results/Result_DW";
+import ResultDH from "./Screen/Results/Result_DH";
+import ResultPW from "./Screen/Results/Result_PW";
+import ResultPH from "./Screen/Results/Result_PH";
+import { ApolloProvider } from "@apollo/client";
+import { client } from "./apollo";
+import Thanks from "./Screen/Thanks";
+import Data from "./Screen/Data";
 
 function App() {
   return (
-    <>
+    <ApolloProvider client={client}>
       <GlobalStyles />
       <Router>
         <Switch>
@@ -22,8 +29,17 @@ function App() {
           <Route path={route.question1} exact>
             <Question1 />
           </Route>
-          <Route path={route.result} exact>
+          <Route path={route.result_nt} exact>
             <ResultDW />
+          </Route>
+          <Route path={route.result_nf} exact>
+            <ResultDH />
+          </Route>
+          <Route path={route.result_st} exact>
+            <ResultPW />
+          </Route>
+          <Route path={route.result_sf} exact>
+            <ResultPH />
           </Route>
           <Route path={route.read} exact>
             <ReadDW />
@@ -34,12 +50,18 @@ function App() {
           <Route path={route.schedule} exact>
             <Schedule />
           </Route>
+          <Route path={route.thanks} exact>
+            <Thanks />
+          </Route>
+          <Route path={route.data} exact>
+            <Data />
+          </Route>
           <Route>
             <Notfound />
           </Route>
         </Switch>
       </Router>
-    </>
+    </ApolloProvider>
   );
 }
 export default App;

@@ -32,12 +32,13 @@ export const TextBox = styled.div`
 `;
 export const Pre = styled.pre`
   color: #2a2a2a;
-  text-align: center;
-  line-height: 18px;
-  margin: 15px 0px;
+  text-align: left;
+  line-height: 20px;
+  margin: 20px 0px;
   font-size: 14px;
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 600;
+  white-space: pre-wrap;
 `;
 export const ColorTitle = styled(Title)`
   color: #85a977;
