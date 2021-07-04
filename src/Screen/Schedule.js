@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import EMAIL_SEND from "../Apollo/mutations/EmailSend";
+import PAY_MUTATION from "../Apollo/mutations/Pay";
 import PHONE_VAL from "../Apollo/mutations/PhoneVal";
 import { Container } from "../Components/Layout";
 import Logo from "../Components/Logo";
@@ -93,6 +94,7 @@ const Schedule = () => {
     }
     setContact(false);
   };
+  const [pay, { loading: payLoad }] = useMutation(PAY_MUTATION);
   return (
     <Container>
       <Logo src="./logo.png" alt="logo" />
@@ -200,12 +202,32 @@ const Schedule = () => {
                 "대학생으로 구성된 저희는 부기북스의 탄생을 위해 매일 (개)고생 중입니다😂\n\nQR코드를 인식하거나 아래의 링크를 클릭해 부기들을 위해 커피 한 잔의 응원을 보내주신다면 정말 큰 힘이 될거에요!"
               }
             </Pre>
-            <a href="https://toss.me/boogibooks">
+            <a
+              href="https://toss.me/boogibooks"
+              onClick={() => {
+                if (!payLoad) {
+                  pay({
+                    variables: {
+                      id: location.state.userId,
+                    },
+                  });
+                }
+              }}
+            >
               <QR src="./remit.png" alt="remit" />
             </a>
             <a
               style={{ textDecoration: "underline", marginTop: "10px" }}
               href="https://toss.me/boogibooks"
+              onClick={() => {
+                if (!payLoad) {
+                  pay({
+                    variables: {
+                      id: location.state.userId,
+                    },
+                  });
+                }
+              }}
             >
               링크로 커피 값을 보내 부기 응원하기
             </a>
