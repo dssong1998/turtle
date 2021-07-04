@@ -8,6 +8,8 @@ const DATA_QUERY = gql`
       email
       phone
       emailVal
+      pay
+      createdAt
     }
   }
 `;
