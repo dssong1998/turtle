@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
@@ -56,6 +56,9 @@ const SubmitInput = styled.input`
 `;
 
 const Schedule = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const location = useLocation();
   const history = useHistory();
   if (!location?.state?.bookTitle || !location?.state?.userId) {
@@ -103,6 +106,16 @@ const Schedule = () => {
         <Text>
           부기는 당신이 책을 읽는 동안 포기하지 않도록, 좀 더 재밌게 책을 읽을
           수 있도록 옆에서 함께 읽는 좋은 책 친구가 될거에요.
+        </Text>
+      </TextBox>
+      <TextBox>
+        <Text>
+          당장 만나뵙고 싶지만 여러분들께 완벽한 서비스를 제공하기 위해 약간의
+          시간이 필요합니다😢
+        </Text>
+        <Text>
+          책읽는 거북이 부기는 "부기북스"라는 이름의 어플으로 완전하게 준비되어
+          플레이스토어와 앱스토어에서 여러분들께 인사드릴거에요!
         </Text>
       </TextBox>
       {contact ? (
@@ -184,21 +197,25 @@ const Schedule = () => {
           <>
             <Pre>
               {
-                "대학생으로 구성된 저희는 부기북스의 탄생을 위해 매일 (개)고생 중입니다😂\n\n부기들을 위해 커피 한 잔의 응원을 보내주신다면"
+                "대학생으로 구성된 저희는 부기북스의 탄생을 위해 매일 (개)고생 중입니다😂\n\nQR코드를 인식하거나 아래의 링크를 클릭해 부기들을 위해 커피 한 잔의 응원을 보내주신다면 정말 큰 힘이 될거에요!"
               }
             </Pre>
-            <QR src="./remit.png" alt="remit" />
+            <a href="https://toss.me/boogibooks">
+              <QR src="./remit.png" alt="remit" />
+            </a>
+            <a
+              style={{ textDecoration: "underline", marginTop: "10px" }}
+              href="https://toss.me/boogibooks"
+            >
+              링크로 커피 값을 보내 부기 응원하기
+            </a>
             <Pre>
               {
-                "정말 큰 힘이 될거에요!\n\n저희에게 응원을 보내주신 분들께는 부기 캐릭터 굿즈를 선물로 보내드릴게요!"
+                "저희에게 응원을 보내주신 분들께는 부기 캐릭터 굿즈를 선물로 보내드릴게요!"
               }
             </Pre>
           </>
         ) : null}
-        <Text>
-          "책읽는 거북이 부기"는 곧 완전한 모습으로 플레이스토어와 앱스토어에서
-          여러분들께 인사드릴거에요.
-        </Text>
       </TextBox>
     </Container>
   );
