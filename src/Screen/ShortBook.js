@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
@@ -56,6 +56,9 @@ const SubmitInput = styled.input`
 `;
 
 const ShortBook = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const location = useLocation();
   const history = useHistory();
   if (!location?.state?.bookTitle || !location?.state?.userId) {
@@ -103,6 +106,13 @@ const ShortBook = () => {
         <Text>
           부기는 당신이 책을 읽는 동안 포기하지 않도록, 좀 더 재밌게 책을 읽을
           수 있도록 옆에서 함께 읽는 좋은 책 친구가 될거에요.
+        </Text>
+        </TextBox>
+        <TextBox>
+        <Text>당장 만나뵙고 싶지만 여러분과 더 재밌게 책을 읽어가기 위해 약간의 시간이 필요합니다😢</Text>
+        <Text>
+          책읽는 거북이 부기는 "부기북스"라는 이름의 어플으로 완전하게 준비되어 플레이스토어와 앱스토어에서
+          여러분들께 인사드릴거에요!
         </Text>
       </TextBox>
       {contact ? (
@@ -195,10 +205,6 @@ const ShortBook = () => {
             </Pre>
           </>
         ) : null}
-        <Text>
-          "책읽는 거북이 부기"는 곧 완전한 모습으로 플레이스토어와 앱스토어에서
-          여러분들께 인사드릴거에요.
-        </Text>
       </TextBox>
     </Container>
   );
