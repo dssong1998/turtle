@@ -22,46 +22,66 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <HelmetProvider>
-        <GAHoc>
-          <GlobalStyles />
-          <Router>
-            <Switch>
-              <Route path={route.home} exact>
+        <GlobalStyles />
+        <Router>
+          <Switch>
+            <Route path={route.home} exact>
+              <GAHoc>
                 <Intro />
-              </Route>
-              <Route path={route.question1} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.question1} exact>
+              <GAHoc>
                 <Question1 />
-              </Route>
-              <Route path={route.result_nt} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.result_nt} exact>
+              <GAHoc>
                 <ResultDW />
-              </Route>
-              <Route path={route.result_nf} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.result_nf} exact>
+              <GAHoc>
                 <ResultDH />
-              </Route>
-              <Route path={route.result_st} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.result_st} exact>
+              <GAHoc>
                 <ResultPW />
-              </Route>
-              <Route path={route.result_sf} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.result_sf} exact>
+              <GAHoc>
                 <ResultPH />
-              </Route>
-              <Route path={route.shortBook} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.shortBook} exact>
+              <GAHoc>
                 <ShortBook />
-              </Route>
-              <Route path={route.schedule} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.schedule} exact>
+              <GAHoc>
                 <Schedule />
-              </Route>
-              <Route path={route.thanks} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.thanks} exact>
+              <GAHoc>
                 <Thanks />
-              </Route>
-              <Route path={route.data} exact>
+              </GAHoc>
+            </Route>
+            <Route path={route.data} exact>
+              <GAHoc>
                 <Data />
-              </Route>
-              <Route>
+              </GAHoc>
+            </Route>
+            <Route>
+              <GAHoc>
                 <Notfound />
-              </Route>
-            </Switch>
-          </Router>
-        </GAHoc>
+              </GAHoc>
+            </Route>
+          </Switch>
+        </Router>
       </HelmetProvider>
     </ApolloProvider>
   );
