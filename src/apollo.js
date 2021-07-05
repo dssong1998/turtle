@@ -2,7 +2,7 @@ import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 
 const httpLink = createHttpLink({
-  uri: "https://turtle-backend.herokuapp.com/graphql",
+  uri: "http://192.168.35.213:4000/graphql",
 });
 const onErrorLink = onError((e) => {
   console.log(e);
