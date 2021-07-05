@@ -4,6 +4,7 @@ import { LinkBtn } from "../Components/Button";
 import { Container } from "../Components/Layout";
 import Logo from "../Components/Logo";
 import { Info, Pre, TextBox } from "../Components/Text";
+import HeaderTitle from "../Components/Tilte";
 import route from "../route";
 const Intro = () => {
   const history = useHistory();
@@ -12,6 +13,7 @@ const Intro = () => {
   };
   return (
     <Container style={{ height: "100%" }}>
+      <HeaderTitle title="시작하기" />
       <TextBox>
         <Logo src="/logo.png" alt="logo" />
         <Info>안녕하세요!</Info>

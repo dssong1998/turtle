@@ -9,6 +9,7 @@ import PHONE_VAL from "../Apollo/mutations/PhoneVal";
 import { Container } from "../Components/Layout";
 import Logo from "../Components/Logo";
 import { ColorTitle, P, Pre, TextBox } from "../Components/Text";
+import HeaderTitle from "../Components/Tilte";
 const TextBlock = styled(TextBox)`
   align-items: flex-start;
 `;
@@ -97,6 +98,7 @@ const Schedule = () => {
   const [pay, { loading: payLoad }] = useMutation(PAY_MUTATION);
   return (
     <Container>
+      <HeaderTitle title="부기는 준비 중" />
       <Logo src="./logo.png" alt="logo" />
       <ColorTitle>부기와 {location?.state?.bookTitle} 완독하기</ColorTitle>
       <TextBox>

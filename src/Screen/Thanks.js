@@ -5,12 +5,13 @@ import EMAIL_VAL from "../Apollo/mutations/EmailVal";
 import { Container } from "../Components/Layout";
 import Logo from "../Components/Logo";
 import { Info, TextBox, Pre, P } from "../Components/Text";
+import HeaderTitle from "../Components/Tilte";
 
 const Thanks = () => {
   const history = useHistory();
   const location = useLocation();
   const params = useParams();
-  if (!params?.type || !location?.search) {
+  if (!params.type || !location.search) {
     history.push("not-accepted");
   }
   const [valEmail, { loading: emailLoad }] = useMutation(EMAIL_VAL);
@@ -25,6 +26,7 @@ const Thanks = () => {
   }
   return (
     <Container style={{ height: "100%" }}>
+      <HeaderTitle title="인증 완료" />
       <TextBox>
         <Logo src="/logo.png" alt="logo" />
         <Info>감사합니다!</Info>

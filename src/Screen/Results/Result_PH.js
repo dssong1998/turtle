@@ -7,6 +7,7 @@ import route from "../../route";
 import { LinkBtn } from "../../Components/Button";
 import { useMutation } from "@apollo/client";
 import CREATE_USER from "../../Apollo/mutations/CreateUser";
+import HeaderTitle from "../../Components/Tilte";
 
 const Image = styled.img`
   width: 210px;
@@ -66,6 +67,7 @@ const ResultPH = () => {
   };
   return (
     <Container>
+      <HeaderTitle title="마음챙김의 시" />
       <ColorTitle>누구보다 사람을 사랑하는</ColorTitle>
       <ColorTitle style={{ marginBottom: "20px" }}>산타클로스 타입</ColorTitle>
       <Title style={{ marginBottom: "10px" }}>{"당신에게는 지금"}</Title>

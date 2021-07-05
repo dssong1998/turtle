@@ -7,6 +7,7 @@ import route from "../../route";
 import { LinkBtn } from "../../Components/Button";
 import { useMutation } from "@apollo/client";
 import CREATE_USER from "../../Apollo/mutations/CreateUser";
+import HeaderTitle from "../../Components/Tilte";
 
 const Image = styled.img`
   width: 210px;
@@ -66,6 +67,7 @@ const ResultPW = () => {
   };
   return (
     <Container>
+      <HeaderTitle title="대학생의 착각" />
       <ColorTitle>어떤 문제도 가뿐하게 해치우는</ColorTitle>
       <ColorTitle style={{ marginBottom: "20px" }}>만능해결사 타입</ColorTitle>
       <Title style={{ marginBottom: "10px" }}>{"당신에게는 지금"}</Title>
