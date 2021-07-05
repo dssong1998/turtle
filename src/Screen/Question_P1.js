@@ -5,6 +5,7 @@ import { LinkBtn } from "../Components/Button";
 import { Container } from "../Components/Layout";
 import Logo from "../Components/Logo";
 import { TextBox, Title, ColorTitle, Pre } from "../Components/Text";
+import HeaderTitle from "../Components/Tilte";
 import route from "../route";
 
 const TextBlock = styled(TextBox)`
@@ -149,6 +150,7 @@ const Question1 = () => {
 
   return (
     <Container>
+      <HeaderTitle title="질문" />
       <Logo
         src="/logo.png"
         alt="logo"

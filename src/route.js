@@ -5,6 +5,7 @@ const route = {
   result_nf: "/res_case2",
   result_st: "/res_case3",
   result_sf: "/res_case4",
+  read: "/readBook",
   shortBook: "/short-book",
   schedule: "/schedule",
   thanks: "/thanks/:type",

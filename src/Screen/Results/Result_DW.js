@@ -7,6 +7,7 @@ import route from "../../route";
 import { LinkBtn } from "../../Components/Button";
 import { useMutation } from "@apollo/client";
 import CREATE_USER from "../../Apollo/mutations/CreateUser";
+import HeaderTitle from "../../Components/Tilte";
 
 const Image = styled.img`
   width: 210px;
@@ -66,6 +67,7 @@ const ResultDW = () => {
   };
   return (
     <Container>
+      <HeaderTitle title="마지막 몰입" />
       <ColorTitle>한계는 없다! 매일 성장하는</ColorTitle>
       <ColorTitle style={{ marginBottom: "20px" }}>수퍼히어로 타입</ColorTitle>
       <Title style={{ marginBottom: "10px" }}>{"당신에게는 지금"}</Title>
