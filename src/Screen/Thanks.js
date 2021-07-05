@@ -11,7 +11,7 @@ const Thanks = () => {
   const history = useHistory();
   const location = useLocation();
   const params = useParams();
-  if (!params.type || !location.search) {
+  if (!params?.type || !location?.search) {
     history.push("not-accepted");
   }
   const [valEmail, { loading: emailLoad }] = useMutation(EMAIL_VAL);
