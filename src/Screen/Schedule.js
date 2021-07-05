@@ -205,7 +205,7 @@ const Schedule = () => {
               }
             </Pre>
             <a
-              href="https://toss.me/boogibooks"
+              href="https://toss.me/boogibooks/4100"
               onClick={() => {
                 if (!payLoad) {
                   pay({
@@ -220,7 +220,7 @@ const Schedule = () => {
             </a>
             <a
               style={{ textDecoration: "underline", marginTop: "10px" }}
-              href="https://toss.me/boogibooks"
+              href="https://toss.me/boogibooks/4100"
               onClick={() => {
                 if (!payLoad) {
                   pay({
