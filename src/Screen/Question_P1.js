@@ -6,6 +6,7 @@ import { Container } from "../Components/Layout";
 import Logo from "../Components/Logo";
 import { TextBox, Title, ColorTitle, Pre } from "../Components/Text";
 import HeaderTitle from "../Components/Tilte";
+import GAHoc from "../GA";
 import route from "../route";
 
 const TextBlock = styled(TextBox)`
@@ -149,46 +150,48 @@ const Question1 = () => {
   };
 
   return (
-    <Container>
-      <HeaderTitle title="질문" />
-      <Logo
-        src="/logo.png"
-        alt="logo"
-        style={{ width: "100px", marginBottom: "20px" }}
-      />
-      <ColorTitle>
-        {"아래의 질문에 A 또는 B를 골라 대답하고 결과를 제출해주세요"}
-      </ColorTitle>
-      {questions.map((val, idx) => {
-        return (
-          <TextBlock key={idx}>
-            <Title>질문 {idx + 1}</Title>
-            <DetailBox>
-              <Pre>{val}</Pre>
-              <Pre>{options[idx]}</Pre>
-            </DetailBox>
-            <BtnWrapper>
-              <ChoiceBtn
-                onClick={() => clickChoice(idx, "A")}
-                chosen={Boolean(choice[idx] === "A")}
-              >
-                A
-              </ChoiceBtn>
-              <ChoiceBtn
-                onClick={() => clickChoice(idx, "B")}
-                chosen={Boolean(choice[idx] === "B")}
-              >
-                B
-              </ChoiceBtn>
-            </BtnWrapper>
-          </TextBlock>
-        );
-      })}
-      <LinkWrapper>
-        <LinkBtn onClick={toPrev}>이전</LinkBtn>
-        <LinkBtn onClick={toNext}>결과 제출하기</LinkBtn>
-      </LinkWrapper>
-    </Container>
+    <GAHoc>
+      <Container>
+        <HeaderTitle title="질문" />
+        <Logo
+          src="/logo.png"
+          alt="logo"
+          style={{ width: "100px", marginBottom: "20px" }}
+        />
+        <ColorTitle>
+          {"아래의 질문에 A 또는 B를 골라 대답하고 결과를 제출해주세요"}
+        </ColorTitle>
+        {questions.map((val, idx) => {
+          return (
+            <TextBlock key={idx}>
+              <Title>질문 {idx + 1}</Title>
+              <DetailBox>
+                <Pre>{val}</Pre>
+                <Pre>{options[idx]}</Pre>
+              </DetailBox>
+              <BtnWrapper>
+                <ChoiceBtn
+                  onClick={() => clickChoice(idx, "A")}
+                  chosen={Boolean(choice[idx] === "A")}
+                >
+                  A
+                </ChoiceBtn>
+                <ChoiceBtn
+                  onClick={() => clickChoice(idx, "B")}
+                  chosen={Boolean(choice[idx] === "B")}
+                >
+                  B
+                </ChoiceBtn>
+              </BtnWrapper>
+            </TextBlock>
+          );
+        })}
+        <LinkWrapper>
+          <LinkBtn onClick={toPrev}>이전</LinkBtn>
+          <LinkBtn onClick={toNext}>결과 제출하기</LinkBtn>
+        </LinkWrapper>
+      </Container>
+    </GAHoc>
   );
 };
 export default Question1;

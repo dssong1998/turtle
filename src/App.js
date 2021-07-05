@@ -16,7 +16,6 @@ import { ApolloProvider } from "@apollo/client";
 import { client } from "./apollo";
 import Thanks from "./Screen/Thanks";
 import Data from "./Screen/Data";
-import GAHoc from "./GA";
 
 function App() {
   return (
@@ -26,59 +25,37 @@ function App() {
         <Router>
           <Switch>
             <Route path={route.home} exact>
-              <GAHoc>
-                <Intro />
-              </GAHoc>
+              <Intro />
             </Route>
             <Route path={route.question1} exact>
-              <GAHoc>
-                <Question1 />
-              </GAHoc>
+              <Question1 />
             </Route>
             <Route path={route.result_nt} exact>
-              <GAHoc>
-                <ResultDW />
-              </GAHoc>
+              <ResultDW />
             </Route>
             <Route path={route.result_nf} exact>
-              <GAHoc>
-                <ResultDH />
-              </GAHoc>
+              <ResultDH />
             </Route>
             <Route path={route.result_st} exact>
-              <GAHoc>
-                <ResultPW />
-              </GAHoc>
+              <ResultPW />
             </Route>
             <Route path={route.result_sf} exact>
-              <GAHoc>
-                <ResultPH />
-              </GAHoc>
+              <ResultPH />
             </Route>
             <Route path={route.shortBook} exact>
-              <GAHoc>
-                <ShortBook />
-              </GAHoc>
+              <ShortBook />
             </Route>
             <Route path={route.schedule} exact>
-              <GAHoc>
-                <Schedule />
-              </GAHoc>
+              <Schedule />
             </Route>
             <Route path={route.thanks} exact>
-              <GAHoc>
-                <Thanks />
-              </GAHoc>
+              <Thanks />
             </Route>
             <Route path={route.data} exact>
-              <GAHoc>
-                <Data />
-              </GAHoc>
+              <Data />
             </Route>
             <Route>
-              <GAHoc>
-                <Notfound />
-              </GAHoc>
+              <Notfound />
             </Route>
           </Switch>
         </Router>

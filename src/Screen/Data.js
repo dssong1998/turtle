@@ -7,6 +7,7 @@ import { LinkBtn } from "../Components/Button";
 import { Container } from "../Components/Layout";
 import Logo from "../Components/Logo";
 import { Info, TextBox } from "../Components/Text";
+import GAHoc from "../GA";
 import route from "../route";
 const Data = () => {
   const history = useHistory();
@@ -32,33 +33,35 @@ const Data = () => {
     history.push(route.home);
   };
   return (
-    <Container>
-      <TextBox>
-        <Logo src="/logo.png" alt="logo" onClick={() => setShow(true)} />
-        <Info>잘못된 페이지입니다</Info>
-        <LinkBtn onClick={ToHome}>홈으로 돌아가기</LinkBtn>
-      </TextBox>
-      {show ? (
-        <form onSubmit={handleSubmit(onVal)}>
-          <input
-            {...register("password")}
-            style={{
-              backgroundColor: "transparent",
-              color: "transparent",
-              border: "none",
-            }}
-          />
-          <input
-            type="submit"
-            style={{
-              backgroundColor: "transparent",
-              color: "transparent",
-              border: "none",
-            }}
-          />
-        </form>
-      ) : null}
-    </Container>
+    <GAHoc>
+      <Container>
+        <TextBox>
+          <Logo src="/logo.png" alt="logo" onClick={() => setShow(true)} />
+          <Info>잘못된 페이지입니다</Info>
+          <LinkBtn onClick={ToHome}>홈으로 돌아가기</LinkBtn>
+        </TextBox>
+        {show ? (
+          <form onSubmit={handleSubmit(onVal)}>
+            <input
+              {...register("password")}
+              style={{
+                backgroundColor: "transparent",
+                color: "transparent",
+                border: "none",
+              }}
+            />
+            <input
+              type="submit"
+              style={{
+                backgroundColor: "transparent",
+                color: "transparent",
+                border: "none",
+              }}
+            />
+          </form>
+        ) : null}
+      </Container>
+    </GAHoc>
   );
 };
 export default Data;
