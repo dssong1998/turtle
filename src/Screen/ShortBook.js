@@ -13,11 +13,13 @@ import HeaderTitle from "../Components/Tilte";
 import GAHoc from "../GA";
 const TextBlock = styled(TextBox)`
   align-items: flex-start;
+  padding: 15px 20px;
 `;
 const Text = styled(P)`
   text-align: left;
   padding: 0;
   margin: 5px 0;
+  font-size: 15px;
 `;
 const InfoText = styled(P)`
   text-align: left;
@@ -103,7 +105,7 @@ const ShortBook = () => {
         <HeaderTitle title="부기는 준비 중" />
         <Logo src="./logo.png" alt="logo" />
         <ColorTitle>부기와 짧은 {location?.state?.bookTitle} 읽기</ColorTitle>
-        <TextBox>
+        <TextBlock>
           <Text>
             안녕하세요! 저희는 부기북스 어플을 개발 중인 부기들입니다!
           </Text>
@@ -115,8 +117,17 @@ const ShortBook = () => {
             부기는 당신이 책을 읽는 동안 포기하지 않도록, 좀 더 재밌게 책을 읽을
             수 있도록 옆에서 함께 읽는 좋은 책 친구가 될거에요.
           </Text>
-        </TextBox>
-        <TextBox>
+          <Text>
+            부기는 독서 계획 스케쥴링, 기록 남기기, 나만의 짧은 책 출간하기,
+            짧은 책으로 3일만에 완독하기 등 여러분의 독서를 도울 여러 서비스를
+            준비하고 있습니다.
+          </Text>
+          <Text>
+            부기북스 어플리케이션이 제공할 서비스에 관심이 생기신다면 이메일을
+            남기고 가장 먼저 어플 소식을 받아보세요.
+          </Text>
+        </TextBlock>
+        <TextBlock>
           <Text>
             당장 만나뵙고 싶지만 여러분들께 완벽한 서비스를 제공하기 위해 약간의
             시간이 필요합니다😢
@@ -125,7 +136,17 @@ const ShortBook = () => {
             책읽는 거북이 부기는 "부기북스"라는 이름의 어플으로 완전하게
             준비되어 플레이스토어와 앱스토어에서 여러분들께 인사드릴거에요!
           </Text>
-        </TextBox>
+          <Text>
+            궁금한 점은{" "}
+            <a
+              href="mailto:official@boogibooks.com"
+              style={{ textDecoration: "underline" }}
+            >
+              official@boogibooks.com
+            </a>
+            으로 문의해주세요.
+          </Text>
+        </TextBlock>
         {contact ? (
           <TextBlock>
             <Pre>
