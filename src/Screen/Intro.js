@@ -92,9 +92,9 @@ const Intro = () => {
   const ToWho = () => {
     history.push(route.who);
   };
-  const ToWhat = () => {
-    history.push(route.what);
-  };
+  // const ToWhat = () => {
+  //   history.push(route.what);
+  // };
   const onCompleted = (data) => {
     const { createComment } = data;
     setItems([createComment].concat(items).slice(0, 5));
@@ -144,7 +144,7 @@ const Intro = () => {
           <Info>부기에요.</Info>
           <LinkBox>
             <LinkBtn onClick={ToWho}>부기는 누구인가요?</LinkBtn>
-            <LinkBtn onClick={ToWhat}>{"부기북스는\n무엇인가요?"}</LinkBtn>
+            {/* <LinkBtn onClick={ToWhat}>{"부기북스는\n무엇인가요?"}</LinkBtn> */}
           </LinkBox>
           <Pre>{"부기에게 읽어 볼만한 책을 추천해주세요!"}</Pre>
           <form onSubmit={handleSubmit(onValid)}>
