@@ -65,6 +65,7 @@ const CommentLine = styled.div`
 `;
 const Comment = styled.p`
   font-size: 16px;
+  max-width: 80%;
 `;
 const CreateDate = styled.p`
   font-size: 10px;
