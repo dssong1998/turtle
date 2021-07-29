@@ -1,50 +1,77 @@
+import { useMutation } from "@apollo/client";
 import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import CREATE_USER from "../Apollo/mutations/CreateUser";
 import { Container } from "../Components/Layout";
-import { ColorTitle, Pre, TextBox, Title } from "../Components/Text";
+import { ColorTitle, Pre, TextBox } from "../Components/Text";
 import HeaderTitle from "../Components/Tilte";
 import GAHoc from "../GA";
+import route from "../route";
 
 const Image = styled.img`
-  width: 210px;
-  height: 280px;
+  width: 100vw;
+  height: 100vw;
   background-color: #85a977;
+  max-width: 900px;
+  max-height: 900px;
 `;
 
 const WhatIsBoogibooks = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const history = useHistory();
+  const onCompleted = (data) => {
+    const {
+      createUser: { id },
+    } = data;
+    history.push({
+      pathname: route.exit,
+      state: { userId: id },
+    });
+  };
+  const [createId, { loading }] = useMutation(CREATE_USER, { onCompleted });
+  const clickNext = () => {
+    if (!loading) {
+      createId({
+        variables: {
+          choice: "",
+        },
+      });
+    }
+  };
   return (
     <GAHoc>
       <Container>
-        <HeaderTitle title="부기북스는요" />
-        <ColorTitle>이상적이고 아름다운 세상을 꿈꾸는</ColorTitle>
-        <ColorTitle style={{ marginBottom: "20px" }}>예언자 타입</ColorTitle>
-        <Title style={{ marginBottom: "10px" }}>{"당신에게는 지금"}</Title>
-        <Image src="./books/meditations.jpeg" alt="meditations-cover" />
-        <Title style={{ marginTop: "10px" }}>{"'명상록'이 필요합니다."}</Title>
+        <HeaderTitle title="부기는요" />
+        <ColorTitle style={{ marginBottom: "20px" }}>
+          책읽는 거북이 부기에 대하여
+        </ColorTitle>
+        <Image src="./resume.png" alt="boogi-resume" />
         <TextBox style={{ alignItems: "flex-start" }}>
           <ColorTitle style={{ marginTop: "10px" }}>
-            {"왜 이 책이냐면요!"}
+            {"부기는 퀴즈대회 거북대표입니다"}
           </ColorTitle>
           <Pre>
             {
-              "밝고 희망찬 미래를 바라고 생각하는 아름다운 당신!\n다같이 행복한 유토피아를 이야기하는\n예언자와 어울리시네요.\n\n꿈꾸고 상상하는 일은 아름답지만\n종종 눈 앞의 문제들을 만날 때는\n이상과 다른 현실에 힘든 날도 있을거에요.\n'명상록'은 그런 힘겨운 오늘들을 훌륭하게 보내기 위해\n필요한 지혜를 담고 있습니다.\n\n다 읽고 난 후에는 좀 더 담담하게\n어려운 문제에 맞서 싸우고\n크고 작게 반복되는 성공과 실패들로부터 의연해진\n자신을 발견할 수 있을거에요."
+              "거북이와 토끼는 오래 전부터\n각종 대회를 열며 승부를 겨뤄왔더랬죠.\n처음 시작은 모두들 잘 아는 달리기 시합이었구요\n부기의 할아버지는 그날의 달리기 주자였죠.\n\n어릴 때부터 할아버지의 이야기를 들으며\n거북대표의 꿈을 키우던 부기는\n책을 읽는 것을 좋아하는만큼\n퀴즈대회에 참가하기로 결심했어요.\n\n들어보니 토끼들이 지내는 육지에는\n인터넷이 빵빵 터진다더라구요.\n책 몇권 쯤이야 유튜브와 구글에 검색하면\n다 된다면서요?\n\n그래서 부기도 고향을 떠나 육지로 올라왔어요.\n그치만 책 읽는걸 좋아하는만큼\n대충 검색해서 공부하려는건 아니구요\n\n온 세상 사람들을 다 만날 수 있다는 인터넷에서\n다른 사람들과 함께 책을 읽어보려구요!\n\n여러분! 부기와 함께 책읽기, 도와주실거죠?"
             }
           </Pre>
-          {/* <Pre>
-          {
-            "'명상록'은 로마의 황제였던\n마르쿠스 아우렐리우스가 쓴 일기형식의 책입니다.\n\n스토아 철학을 근간으로 작가의 사상을 담은\n이 책은 앞으로 당신이 만나게 될\n수많은 장애물과 위험들을 슬기롭게 극복하고\n헤쳐나가는 방법에 대해 이야기합니다.\n\n어려운 이야기가 나오면\n전부 이해하고 기억하려하지 말고\n할아버지의 옛날 이야기를 듣는 기분으로\n가볍게 읽어보세요.\n\n다 읽고 난 후에는\n좀 더 담담하게 어려운 문제에 맞서 싸우고\n크고 작게 반복되는 성공과 실패들로부터 의연해진\n자신을 발견할 수 있을거에요."
-          }
-        </Pre>*/}
-          <ColorTitle style={{ marginTop: "10px" }}>{"부기 이야기"}</ColorTitle>
+          <ColorTitle style={{ marginTop: "10px" }}>
+            {"부기는 꿈이 있어요"}
+          </ColorTitle>
           <Pre>
             {
-              '부기의 어릴적 꿈은 닌자거북이었어요.\n영재소리를 듣던 유망한 닌자거북이 후보였죠.\n악당을 물리치고 좋은 세상을 만드는 꿈을 꿨지만\n불의의 사고로 다리를 다쳐 후보에서 탈락했어요.\n\n다리가 아플 때 마다 속상했지만 명상록의\n구절을 떠올리며 극복하고 마음을 다잡았습니다.\n\n⌜너를 지배하는 정신을 더 이상 산만하게 하지 말고, 마치 지금 죽음을 앞둔 사람인 것처럼 육신을 무시해 버려라.⌟\n\n이제 부기는 책을 읽고 사람들에게 좋은 이야기를 전해\n더 멋진 세상을 만들는 꿈을 꾸고 있답니다.\n\n자신의 인생책이라고 자부하던 부기는 독서 팁이라며 말을 전해달라 부탁했어요.\n\n"어려운 말이 나와 이해가 안 될 때가 있어도 할아버지가 읽어주는 이야기라는 생각으로 쉽게 지나가며 떠오르는 생각들에 집중하면 조금은 편하게 읽을 수 있을거에요!"'
+              "육지에 올라와 책 읽는 사람들을 찾아다녔는데\n꽤 많은 사람들이 책에 관심이 없더라구요.\n책 읽기를 선뜻 시작하기가 어려워 그런가봐요.\n\n그래서 사람들이 책에 좀 더 쉽게 다가가기 위해\n먼저 책을 읽어 온 사람들이 도와 줄 수 있는\n방법이 없을까 고민해봤어요.\n\n부기의 꿈은 어디서든 흔하게\n책 이야기를 하는거에요\n나의 생각을 담아 이야기 하고\n상대의 생각이 담긴 이야기를 듣는거죠!\n\n다른 생각들을 만나 나의 생각을 만드다는게\n정말 멋지지 않나요?\n부기는 함께 이야기를 나눌 친구들을\n찾아다니는 중이에요.\n\n부기의 첫번째 책친구가 되어주시겠어요?"
             }
           </Pre>
-          <Pre>아래 버튼을 눌러 부기와 함께 책을 읽어볼까요?</Pre>
+          <Pre
+            style={{ textDecoration: "underline", color: "#85a977" }}
+            onClick={clickNext}
+          >
+            부기의 소식을 듣고싶으신가요?
+          </Pre>
         </TextBox>
       </Container>
     </GAHoc>
