@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   background-color: #f7f7f7;
   white-space: normal;
-  padding: 40px 0px;
+  padding: 40px 15px;
   padding-bottom: 20px;
   flex-direction: column;
   min-height: 100vh;

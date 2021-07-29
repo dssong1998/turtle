@@ -10,6 +10,9 @@ const route = {
   schedule: "/schedule",
   thanks: "/thanks/:type",
   data: "/data/:secret",
+  who: "/who-is-boogi",
+  what: "/what-is-boogibooks",
+  exit: "/exit",
 };
 
 export default route;
