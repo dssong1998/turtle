@@ -129,7 +129,9 @@ const Intro = () => {
   useEffect(() => {
     if (!queryLoading && data) {
       setItems(data.seeComment);
-      setTotalPage(data.seeComment[0].totalPage);
+      if (data.seeComment[0]) {
+        setTotalPage(data.seeComment[0].totalPage);
+      }
     }
   }, [queryLoading, data]);
 
