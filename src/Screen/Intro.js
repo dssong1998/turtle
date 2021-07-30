@@ -82,6 +82,7 @@ const PageLine = styled.div`
 const Cursor = styled.p`
   font-size: 30px;
   color: ${(props) => (props.disabled ? "rgba(0, 0, 0, 0.3)" : "#85a977")};
+  cursor: pointer;
 `;
 
 const Intro = () => {
