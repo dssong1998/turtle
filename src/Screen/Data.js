@@ -2,6 +2,7 @@ import { useLazyQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router-dom";
+import { logUserIn } from "../apollo";
 import DATA_QUERY from "../Apollo/queries/SeeDatas";
 import { LinkBtn } from "../Components/Button";
 import { Container } from "../Components/Layout";
@@ -17,6 +18,9 @@ const Data = () => {
   const [show, setShow] = useState(false);
   const onVal = (data) => {
     const { password } = data;
+    if (password === params.secret) {
+      logUserIn(password);
+    }
     if (!loading) {
       query({
         variables: {

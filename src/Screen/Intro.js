@@ -12,6 +12,8 @@ import { useForm } from "react-hook-form";
 import { useMutation, useQuery } from "@apollo/client";
 import SEE_COMMENTS from "../Apollo/queries/SeeComments";
 import CREATE_COMMENT from "../Apollo/mutations/CreateComment";
+import { isLoggedInVar } from "../apollo";
+import DELETE_COMMENT from "../Apollo/mutations/DeleteComment";
 
 const LinkBox = styled.div`
   width: 100%;
@@ -101,6 +103,9 @@ const Intro = () => {
     const { createComment } = data;
     setItems([createComment].concat(items).slice(0, 5));
   };
+  const deleteComplete = (data) => {
+    window.location.reload();
+  };
   const { data, loading: queryLoading } = useQuery(SEE_COMMENTS, {
     variables: {
       page_no: page,
@@ -110,6 +115,21 @@ const Intro = () => {
   const [createComment, { loading }] = useMutation(CREATE_COMMENT, {
     onCompleted,
   });
+  const [deleteComment, { loading: deleteLoading }] = useMutation(
+    DELETE_COMMENT,
+    {
+      onCompleted: deleteComplete,
+    }
+  );
+  const deleteFn = (id) => {
+    if (!deleteLoading) {
+      deleteComment({
+        variables: {
+          id,
+        },
+      });
+    }
+  };
   const onValid = (data) => {
     if (!loading) {
       createComment({
@@ -164,9 +184,19 @@ const Intro = () => {
                   return (
                     <CommentLine key={item.id}>
                       <Comment>{item.payload}</Comment>
-                      <CreateDate>
-                        {date.getFullYear()}-{date.getMonth()}-{date.getDate()}
-                      </CreateDate>
+                      {isLoggedInVar() ? (
+                        <CreateDate
+                          style={{ cursor: "pointer" }}
+                          onClick={() => deleteFn(item.id)}
+                        >
+                          ❎
+                        </CreateDate>
+                      ) : (
+                        <CreateDate>
+                          {date.getFullYear()}-{date.getMonth()}-
+                          {date.getDate()}
+                        </CreateDate>
+                      )}
                     </CommentLine>
                   );
                 })
