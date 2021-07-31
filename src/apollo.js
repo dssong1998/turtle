@@ -1,13 +1,33 @@
-import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+  makeVar,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
+const TOKEN = "authorization";
+export const isLoggedInVar = makeVar(Boolean(localStorage.getItem(TOKEN)));
 
+export const logUserIn = (token) => {
+  localStorage.setItem(TOKEN, token);
+  isLoggedInVar(true);
+};
 const httpLink = createHttpLink({
-  uri: "https://turtle-backend.herokuapp.com/graphql",
+  uri: "http://192.168.35.213:4000/graphql",
 });
 const onErrorLink = onError((e) => {
   console.log(e);
 });
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      authorization: localStorage.getItem(TOKEN),
+    },
+  };
+});
 export const client = new ApolloClient({
-  link: onErrorLink.concat(httpLink),
+  link: authLink.concat(onErrorLink).concat(httpLink),
   cache: new InMemoryCache(),
 });
