@@ -81,7 +81,11 @@ const WhatIsBoogibooks = () => {
             }
           </Pre>
           <Pre
-            style={{ textDecoration: "underline", color: "#85a977" }}
+            style={{
+              textDecoration: "underline",
+              color: "#85a977",
+              cursor: "pointer",
+            }}
             onClick={clickNext}
           >
             부기의 소식을 듣고싶으신가요?
