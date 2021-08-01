@@ -52,7 +52,7 @@ const WhatIsBoogibooks = () => {
           {"독서 친구 부기북스"}
         </ColorTitle>
         <Image src="./about-boogi2.png" alt="boogibooks-cap2" />
-        <TextBox style={{ alignItems: "flex-start" }}>
+        <TextBox>
           <Pre>
             {
               "꾸준히 책읽기가 어렵죠?\n이젠 책읽을 시간이 되면 부기가 알려드릴게요!\n매일 읽은 것을 기록해서 남길 수 있어요!"
