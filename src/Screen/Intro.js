@@ -91,14 +91,14 @@ const Intro = () => {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(0);
   const [totalPage, setTotalPage] = useState(0);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, setValue } = useForm();
   const history = useHistory();
   const ToWho = () => {
     history.push(route.who);
   };
-  // const ToWhat = () => {
-  //   history.push(route.what);
-  // };
+  const ToWhat = () => {
+    history.push(route.what);
+  };
   const onCompleted = (data) => {
     const { createComment } = data;
     setItems([createComment].concat(items).slice(0, 5));
@@ -138,6 +138,7 @@ const Intro = () => {
         },
       });
     }
+    setValue("text", "");
   };
   const prevPage = () => {
     if (page === 0) return;
@@ -156,7 +157,9 @@ const Intro = () => {
       }
     }
   }, [queryLoading, data]);
-
+  if (queryLoading && !data) {
+    return null;
+  }
   return (
     <GAHoc>
       <Container style={{ height: "100%" }}>
@@ -168,7 +171,7 @@ const Intro = () => {
           <Info>부기에요.</Info>
           <LinkBox>
             <LinkBtn onClick={ToWho}>부기는 누구인가요?</LinkBtn>
-            {/* <LinkBtn onClick={ToWhat}>{"부기북스는\n무엇인가요?"}</LinkBtn> */}
+            <LinkBtn onClick={ToWhat}>{"부기북스는\n무엇인가요?"}</LinkBtn>
           </LinkBox>
           <Pre>{"부기에게 읽어 볼만한 책을 추천해주세요!"}</Pre>
           <form onSubmit={handleSubmit(onValid)}>

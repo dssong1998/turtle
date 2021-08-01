@@ -11,10 +11,10 @@ import route from "../route";
 
 const Image = styled.img`
   width: 100vw;
-  height: 100vw;
+  height: 56.25vw;
   background-color: #85a977;
-  max-width: 900px;
-  max-height: 900px;
+  max-width: 960px;
+  max-height: 540px;
 `;
 
 const WhatIsBoogibooks = () => {
@@ -43,27 +43,41 @@ const WhatIsBoogibooks = () => {
   };
   return (
     <GAHoc>
-      <Container>
+      <Container style={{ paddingTop: "0px" }}>
         <HeaderTitle title="부기는요" />
-        <ColorTitle style={{ marginBottom: "20px" }}>
-          책읽는 거북이 부기에 대하여
+        {/* <ColorTitle>부기북스는</ColorTitle>
+        <ColorTitle>독서의 새로운 모습입니다</ColorTitle> */}
+        <Image src="./about-boogi1.png" alt="boogibooks-cap1" />
+        <ColorTitle style={{ marginTop: "20px", marginBottom: "20px" }}>
+          {"독서 친구 부기북스"}
         </ColorTitle>
-        <Image src="./resume.png" alt="boogi-resume" />
+        <Image src="./about-boogi2.png" alt="boogibooks-cap2" />
         <TextBox style={{ alignItems: "flex-start" }}>
-          <ColorTitle style={{ marginTop: "10px" }}>
-            {"부기는 퀴즈대회 거북대표입니다"}
-          </ColorTitle>
           <Pre>
             {
-              "거북이와 토끼는 오래 전부터\n각종 대회를 열며 승부를 겨뤄왔더랬죠.\n처음 시작은 모두들 잘 아는 달리기 시합이었구요\n부기의 할아버지는 그날의 달리기 주자였죠.\n\n어릴 때부터 할아버지의 이야기를 들으며\n거북대표의 꿈을 키우던 부기는\n책을 읽는 것을 좋아하는만큼\n퀴즈대회에 참가하기로 결심했어요.\n\n들어보니 토끼들이 지내는 육지에는\n인터넷이 빵빵 터진다더라구요.\n책 몇권 쯤이야 유튜브와 구글에 검색하면\n다 된다면서요?\n\n그래서 부기도 고향을 떠나 육지로 올라왔어요.\n그치만 책 읽는걸 좋아하는만큼\n대충 검색해서 공부하려는건 아니구요\n\n온 세상 사람들을 다 만날 수 있다는 인터넷에서\n다른 사람들과 함께 책을 읽어보려구요!\n\n여러분! 부기와 함께 책읽기, 도와주실거죠?"
+              "꾸준히 책읽기가 어렵죠?\n이젠 책읽을 시간이 되면 부기가 알려드릴게요!\n매일 읽은 것을 기록해서 남길 수 있어요!"
             }
           </Pre>
-          <ColorTitle style={{ marginTop: "10px" }}>
-            {"부기는 꿈이 있어요"}
-          </ColorTitle>
+        </TextBox>
+        <ColorTitle style={{ marginBottom: "20px" }}>
+          {"풍부해지는 책읽기"}
+        </ColorTitle>
+        <Image src="./about-boogi3.png" alt="boogibooks-cap3" />
+        <TextBox>
           <Pre>
             {
-              "육지에 올라와 책 읽는 사람들을 찾아다녔는데\n꽤 많은 사람들이 책에 관심이 없더라구요.\n책 읽기를 선뜻 시작하기가 어려워 그런가봐요.\n\n그래서 사람들이 책에 좀 더 쉽게 다가가기 위해\n먼저 책을 읽어 온 사람들이 도와 줄 수 있는\n방법이 없을까 고민해봤어요.\n\n부기의 꿈은 어디서든 흔하게\n책 이야기를 하는거에요\n나의 생각을 담아 이야기 하고\n상대의 생각이 담긴 이야기를 듣는거죠!\n\n다른 생각들을 만나 나의 생각을 만드다는게\n정말 멋지지 않나요?\n부기는 함께 이야기를 나눌 친구들을\n찾아다니는 중이에요.\n\n부기의 첫번째 책친구가 되어주시겠어요?"
+              "읽고 있는 책들의 진도율을 확인하고 관리해보세요!\n다른 사람들은 어떤 책을 읽는지 참고해보세요.\n그들이 어떤 감상을 남겼는지도 구경할 수 있어요."
+            }
+          </Pre>
+        </TextBox>
+        <ColorTitle style={{ marginBottom: "20px" }}>
+          {"다양한 생각의 만남"}
+        </ColorTitle>
+        <Image src="./about-boogi4.png" alt="boogibooks-cap4" />
+        <TextBox>
+          <Pre>
+            {
+              "부기북스는 다양한 곳에서 여러 주제를 모으는 중이에요. 이들 중 정확한 정보를 찾고 필요한 분들께 때맞춰 전달하기 위해서죠. 가장 좋은 형태와 방법을 계속 고민하고 있답니다.\n\n저희는 여러분께 세상의 모든 유용하고 정확한 정보들을 모아 전달하는 것을 목표로 합니다.\n\n부기가 생각하는 좋은 정보들은 우선 책에 있더라구요! 그런 의미에서 부기북스와 함께 독서하실래요?"
             }
           </Pre>
           <Pre
