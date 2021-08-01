@@ -131,7 +131,7 @@ const Intro = () => {
     }
   };
   const onValid = (data) => {
-    if (!loading) {
+    if (!loading && data.text !== "") {
       createComment({
         variables: {
           msg: data.text,
